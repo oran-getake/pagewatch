@@ -52,8 +52,18 @@ jobs:
             --format=zip \
             --prefix="${product_name}/" \
             --output="dist/${archive_name}.zip" \
-            HEAD
+            HEAD \
+            -- . \
+            ':(exclude).github' \
+            ':(exclude).github/**'
+          archive_listing="$(unzip -Z1 "dist/${archive_name}.zip")"
+          if grep -Eq '(^|/)\.github(/|$)' <<< "$archive_listing"; then
+            echo "Refusing to publish an archive containing .github/."
+            exit 1
+          fi
+          unzip -t "dist/${archive_name}.zip"
           (cd dist && sha256sum "${archive_name}.zip" > "${archive_name}.sha256")
+          (cd dist && sha256sum --check "${archive_name}.sha256")
           echo "archive_name=${archive_name}" >> "$GITHUB_OUTPUT"
 
       - name: Upload distribution artifact
