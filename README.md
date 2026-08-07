@@ -86,3 +86,15 @@ Debugは `127.0.0.1:8000`、Releaseは
 - Railway Healthchecks: https://docs.railway.com/deployments/healthchecks
 - Railway Variables: https://docs.railway.com/variables
 - Apple Keychain: https://developer.apple.com/documentation/security/keychain-services
+
+## 配布・利用資料
+
+PageWatchは、無料・任意支援の**「SwiftUI＋FastAPI学習用ソース」**として配布します。完成済みのApp Storeアプリではなく、実機・TestFlightでの最終確認、Release用API URL、Apple Developer署名、正式なプライバシー文書などの公開前作業が残っています。
+
+- [配布ページ文面](sales/BOOTH_LISTING_JA.md)
+- [利用者ガイド](sales/BUYER_GUIDE_JA.md)
+- [よくある質問](sales/FAQ_JA.md)
+- [商用利用ライセンス](sales/COMMERCIAL_LICENSE_JA.md)
+- [配布リリースチェックリスト](sales/RELEASE_CHECKLIST.md)
+
+個別の設置・質問対応・改修・App Store審査対応は含みません。対象URLの利用規約、robots.txt、権利、アクセス負荷、法令を確認し、許可された範囲で利用してください。
