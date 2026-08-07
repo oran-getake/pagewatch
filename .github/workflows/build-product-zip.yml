@@ -2,6 +2,7 @@ name: Build distribution ZIP
 
 on:
   workflow_dispatch:
+  pull_request:
   push:
     tags:
       - "product-v*"
@@ -64,4 +65,3 @@ jobs:
             dist/${{ steps.archive.outputs.archive_name }}.sha256
           if-no-files-found: error
           retention-days: 30
-
